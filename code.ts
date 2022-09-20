@@ -38,7 +38,6 @@ figma.ui.onmessage = async (msg) => {
           instance.absoluteTransform[1][2] - 5,
         ],
       ];
-      console.log("ins", instance.absoluteTransform, rect.relativeTransform);
 
       rect.resize(instance.width + 10, instance.height + 10);
       rect.fills = [{ type: "SOLID", color: { r: 0.1, g: 0.1, b: 0.1 } }];
@@ -65,8 +64,6 @@ figma.ui.onmessage = async (msg) => {
       nodes.push(text);
       parentNames.push(instance.parent?.name);
     }
-
-    console.log(parentNames);
 
     const group = figma.group(nodes, figma.currentPage);
     group.name = "COMPONENT ANNOTATIONS";
